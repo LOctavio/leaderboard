@@ -1,0 +1,57 @@
+.main-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.main-container > div {
+  margin: 0 50px;
+}
+
+.recent-scores {
+  flex-grow: 1;
+  position: relative;
+}
+
+.add-score {
+  flex-grow: 1;
+}
+
+.refresh {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 20px;
+}
+
+.scores-list {
+  border: 1px solid black;
+}
+
+.scores-list ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.scores-list ul li {
+  padding: 5px;
+}
+
+.scores-list ul li:nth-child(even) {
+  background-color: #ddd;
+}
+
+.add-score-form {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+}
+
+.input-text {
+  margin-bottom: 20px;
+}
+
+.submit-button {
+  width: 100px;
+  margin-left: auto;
+}
