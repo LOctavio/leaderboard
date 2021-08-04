@@ -4,7 +4,7 @@ function getGameID(gameId) {
   return gameId;
 }
 
-async function setGameName(getGameId) {
+async function setGameName(getGameID) {
   const gameId = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/', { 
     method: 'POST',
     body: JSON.stringify({ name: 'my new game' }),
@@ -42,3 +42,9 @@ document.querySelector('.submit-button').addEventListener('click', () => {
   const score = document.querySelector('.score').value;
   creteNewScore(user, score, getGameID);
 });
+
+function getScoresList() {
+  fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/'+ getGameID +'/scores/')
+  .then(response => response.json())
+  .then(json => console.log(json));
+}
