@@ -56,6 +56,10 @@ function printScoresList() {
   });
 }
 
+document.querySelector('.refresh').addEventListener('click', () => {
+  printScoresList();
+});
+
 window.onload = () => {
   setGameName(getGameID);
   printScoresList();
