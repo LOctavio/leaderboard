@@ -36,3 +36,9 @@ async function creteNewScore(user, score, getGameID) {
   .then((response) => response.json())
   .then((json) =>  console.log(json));
 }
+
+document.querySelector('.submit-button').addEventListener('click', () => {
+  const user = document.querySelector('.user').value;
+  const score = document.querySelector('.score').value;
+  creteNewScore(user, score, getGameID);
+});
