@@ -48,3 +48,7 @@ function getScoresList() {
   .then(response => response.json())
   .then(json => console.log(json));
 }
+
+window.onload = () => {
+  setGameName(getGameID);
+};
