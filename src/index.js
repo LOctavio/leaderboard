@@ -20,3 +20,19 @@ async function setGameName(getGameId) {
     getGameID(gameId); 
   });
 }
+
+
+async function creteNewScore(user, score, getGameID) {
+  const gameId = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/'+ getGameID +'/scores/', { 
+    method: 'POST',
+    body: JSON.stringify({ 
+      user: user,
+      score: score,
+    }),
+    headers:{
+      'Content-Type': 'application/json'
+    },
+  })
+  .then((response) => response.json())
+  .then((json) =>  console.log(json));
+}
