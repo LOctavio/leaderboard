@@ -42,13 +42,21 @@ document.querySelector('.submit-button').addEventListener('click', () => {
   const score = document.querySelector('.score').value;
   creteNewScore(user, score, getGameID);
 });
-
-function getScoresList() {
+ 
+function printScoresList() {
   fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/'+ getGameID +'/scores/')
   .then(response => response.json())
-  .then(json => console.log(json));
+  .then(json => {
+    const container = document.querySelector('.scores-list ul');
+    json.result.forEach(element => {
+      const score = document.createElement('li');
+      score.innerHTML = element.user + ': ' + element.score;
+      container.appendChild(score);
+    });
+  });
 }
 
 window.onload = () => {
   setGameName(getGameID);
+  printScoresList();
 };
