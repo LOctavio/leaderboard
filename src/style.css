@@ -61,12 +61,13 @@ h2 {
 .add-score-form {
   display: flex;
   flex-direction: column;
-  width: 200px;
+  width: 300px;
   font-family: inherit;
 }
 
 .input-text {
   margin-bottom: 20px;
+  height: 40px;
   font-family: inherit;
 }
 
