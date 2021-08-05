@@ -1,10 +1,10 @@
 import './style.css';
 
-function getGameID(gameId) {
+const getGameID = (gameId) => {
   return gameId;
 }
 
-async function setGameName(getGameID) {
+const setGameName = async (getGameID) => {
   await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/', {
     method: 'POST',
     body: JSON.stringify({ name: 'my new game' }),
@@ -20,7 +20,7 @@ async function setGameName(getGameID) {
     });
 }
 
-async function creteNewScore(user, score, getGameID) {
+const creteNewScore = async (user, score, getGameID) => {
   await fetch(`https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${getGameID}/scores/`, {
     method: 'POST',
     body: JSON.stringify({
@@ -40,7 +40,7 @@ document.querySelector('.submit-button').addEventListener('click', () => {
   creteNewScore(user, score, getGameID);
 });
 
-function printScoresList() {
+const printScoresList = () => {
   const container = document.querySelector('.scores-list ul');
   fetch(`https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${getGameID}/scores/`)
     .then((response) => response.json())
