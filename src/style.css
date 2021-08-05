@@ -1,15 +1,40 @@
+@font-face {
+  font-family: 'SecularOne';
+  src: url('./SecularOne-Regular.woff') format('woff');
+}
+
+body {
+  background-color: #1a1a1d;
+}
+
+h1 {
+  font-family: 'SecularOne', sans-serif;
+  font-size: 60px;
+  color: #c3073f;
+  margin: 0;
+  padding: 40px 20px;
+}
+
 .main-container {
   display: flex;
   flex-direction: row;
+  font-family: 'SecularOne', sans-serif;
 }
 
 .main-container > div {
   margin: 0 50px;
+  font-family: inherit;
+}
+
+h2 {
+  font-size: 40px;
+  color: #950740;
 }
 
 .recent-scores {
   flex-grow: 1;
   position: relative;
+  font-family: inherit;
 }
 
 .add-score {
@@ -20,7 +45,12 @@
   position: absolute;
   right: 0;
   top: 0;
-  margin: 20px;
+  margin: 42.2px 0;
+  height: 40px;
+  width: 100px;
+  font-family: inherit;
+  background-color: #4e4e50;
+  color: #1a1a1d;
 }
 
 .scores-list {
@@ -35,23 +65,39 @@
 
 .scores-list ul li {
   padding: 5px;
+  height: 35px;
+  font-size: 20px;
+  line-height: 35px;
+  font-family: inherit;
+  color: #1a1a1d;
+}
+
+.scores-list ul li:nth-child(odd) {
+  background-color: #6f2232;
 }
 
 .scores-list ul li:nth-child(even) {
-  background-color: #ddd;
+  background-color: #4e4e50;
 }
 
 .add-score-form {
   display: flex;
   flex-direction: column;
-  width: 200px;
+  width: 300px;
+  font-family: inherit;
 }
 
 .input-text {
   margin-bottom: 20px;
+  height: 40px;
+  font-family: inherit;
 }
 
 .submit-button {
   width: 100px;
   margin-left: auto;
+  font-family: inherit;
+  height: 40px;
+  background-color: #4e4e50;
+  color: #1a1a1d;
 }
