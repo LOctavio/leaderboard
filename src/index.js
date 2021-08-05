@@ -1,8 +1,6 @@
 import './style.css';
 
-const getGameID = (gameId) => {
-  return gameId;
-}
+const getGameID = (gameId) => gameId;
 
 const setGameName = async (getGameID) => {
   await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/', {
@@ -18,7 +16,7 @@ const setGameName = async (getGameID) => {
       const gameId = result.replace('Game with ID: ', '').replace(' added.', '');
       getGameID(gameId);
     });
-}
+};
 
 const creteNewScore = async (user, score, getGameID) => {
   await fetch(`https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${getGameID}/scores/`, {
@@ -32,7 +30,7 @@ const creteNewScore = async (user, score, getGameID) => {
     },
   })
     .then((response) => response.json());
-}
+};
 
 document.querySelector('.submit-button').addEventListener('click', () => {
   const user = document.querySelector('.user').value;
@@ -52,7 +50,7 @@ const printScoresList = () => {
         container.appendChild(score);
       });
     });
-}
+};
 
 document.querySelector('.refresh').addEventListener('click', () => {
   printScoresList();
