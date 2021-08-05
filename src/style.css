@@ -1,15 +1,27 @@
+@font-face {
+  font-family: 'SecularOne';
+  src: url('./SecularOne-Regular.woff') format('woff');
+}
+
 .main-container {
   display: flex;
   flex-direction: row;
+  font-family: 'SecularOne';
 }
 
 .main-container > div {
   margin: 0 50px;
+  font-family: inherit;
+}
+
+h2 {
+  font-size: 40px;
 }
 
 .recent-scores {
   flex-grow: 1;
   position: relative;
+  font-family: inherit;
 }
 
 .add-score {
@@ -21,6 +33,7 @@
   right: 0;
   top: 0;
   margin: 20px;
+  font-family: inherit;
 }
 
 .scores-list {
@@ -35,6 +48,10 @@
 
 .scores-list ul li {
   padding: 5px;
+  height: 35px;
+  font-size: 20px;
+  line-height: 35px;
+  font-family: inherit;
 }
 
 .scores-list ul li:nth-child(even) {
@@ -45,13 +62,16 @@
   display: flex;
   flex-direction: column;
   width: 200px;
+  font-family: inherit;
 }
 
 .input-text {
   margin-bottom: 20px;
+  font-family: inherit;
 }
 
 .submit-button {
   width: 100px;
   margin-left: auto;
+  font-family: inherit;
 }
