@@ -3,6 +3,11 @@
   src: url('./SecularOne-Regular.woff') format('woff');
 }
 
+h1 {
+  font-family: 'SecularOne';
+  font-size: 60px;
+}
+
 .main-container {
   display: flex;
   flex-direction: row;
