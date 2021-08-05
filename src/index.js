@@ -33,9 +33,11 @@ const creteNewScore = async (user, score, getGameID) => {
 };
 
 document.querySelector('.submit-button').addEventListener('click', () => {
-  const user = document.querySelector('.user').value;
-  const score = document.querySelector('.score').value;
-  creteNewScore(user, score, getGameID);
+  const user = document.querySelector('.user');
+  const score = document.querySelector('.score');
+  creteNewScore(user.value, score.value, getGameID);
+  user.value = '';
+  score.value = '';
 });
 
 const printScoresList = () => {
